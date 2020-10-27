@@ -96,18 +96,18 @@
 <script>
     const checkbox = document.querySelectorAll('.inbox input[type="checkbox"]');
     let lastCheck;
-
+    //we need lastchecked box 
     function handleCheck(e)
     {
         let inbtw = false;
-        if(e.shiftKey && this.checked)
+        if(e.shiftKey && this.checked) //check if its shiftkey && whether they have checked the box
         {
             checkbox.forEach(ch=>{
-                if(ch===this||ch===lastCheck)
+                if(ch===this||ch===lastCheck) //checked last and checked just
                 {
-                    inbtw=!inbtw;
+                    inbtw=!inbtw;//if starts or ends make true
                 }
-                if(inbtw)
+                if(inbtw) //as soon as the above becomes true, it will check it.
                 {
                     ch.checked = true;
                 }
